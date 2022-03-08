@@ -47,21 +47,21 @@ nav li {
 }
 
 nav a {
-    color: #000;
+    color: #4CBB17;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
 }
 
 nav a:hover {
-    color: #000
+    color: #478778;
 }
 
 nav a::before {
     content: '';
     display: block;
     height: 5px;
-    background-color: #444;
+    background-color: #478778;
 
     position: absolute;
     top: 0;
@@ -73,6 +73,10 @@ nav a:hover::before {
     width: 100%
 
 } 
+
+label {
+    text-align: center;
+}
 /*
 
 body {

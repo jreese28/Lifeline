@@ -10,16 +10,44 @@
 <body>
 <header>
     <div class="container">
-       <img src="assets/logo.png" alt="logo" class="logo"> 
+        <a href = "home.html">
+            <img src="assets/logo.png" alt="logo" class="logo"> 
+        </a>
         <nav>
             <ul>
-                <li><a href="#"><i class="fa fa-fw fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fa fa-fw fa-plus-circle"></i>Add</a></li>
-                <li><a href="#"><i class="fa fa-fw fa-user"></i>Profile</a></li>
+                <li><a href="home.html"><i class="fa fa-fw fa-home"></i>Home</a></li>
+                <li><a href="add.html"><i class="fa fa-fw fa-plus-circle"></i>Add</a></li>
+                <li><a href="profile.html"><i class="fa fa-fw fa-user"></i>Profile</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <h2>Profile</h2>
+
+<label for="fullname">Name:</label>
+<input style="width: 300px;" type="text" id="fullname" name="fullname" placeholder="Enter full name">
+<br>
+<br>
+
+<label for="email">Email address:</label>
+<input style="width: 300px;" type="email" id="email" name="email" placeholder="Enter email: johndoe@example.com">
+<br>
+<br>
+
+<label for="birthday">Birthday:</label>
+<input type="date" id="birthday" name="birthday"> 
+<br>
+<br>
+
+
+<button type="submit">Save</button>
+
+<form class="modal-content animate" action="login.html" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+
+
+
 </body>
 </html>
