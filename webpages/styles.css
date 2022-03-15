@@ -163,19 +163,30 @@ nav a:hover::before {
 }
 
 /* Medicine Table - Home Page */
-table, th, td {
-    border: 1px solid black;
-    text-align: center;
-}
-
-th {
-    font-size: 20px;
-}
-
-table {
-    width: 80%;
+#userMeds{
+    border-collapse: collapse;
+    width: 90%;
     margin-left: auto;
     margin-right:  auto;
+}
+
+#userMeds table,#userMeds th, #userMeds td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+#userMeds th {
+    font-size: 20px;
+    background-color: #4CBB17;
+    color: white;
+}
+
+#userMeds tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#userMeds tr:hover{
+    background-color: #ddd;
 }
 
 .add-button {
