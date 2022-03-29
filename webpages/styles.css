@@ -2,13 +2,16 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background: #fff;
+    background-image: linear-gradient(to bottom,#4CBB17, white);
     font-weight: 400;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 h2 {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    color: #fff;
 }
 .container {
     width: 80%;
@@ -16,7 +19,8 @@ h2 {
 }
 
 header {
-    background: #e5e5e5;
+    background: #fff;
+    opacity: 75%;
 }
 
 header::after{
@@ -76,6 +80,21 @@ nav a:hover::before {
 
 } 
 
+/*Profile Page - Profile Form Styling*/
+
+label{
+    display: inline-block;
+    color: white;
+    font-size: larger;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+input{
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: large;
+}
 
 /*Search Bar - Add Meds Page */
 ::selection{
@@ -178,18 +197,77 @@ nav a:hover::before {
 
 #userMeds th {
     font-size: 20px;
-    background-color: #4CBB17;
+    background-color: #f5a40e;
     color: white;
 }
 
 #userMeds tr:nth-child(even){
     background-color: #f2f2f2;
 }
+#userMeds tr:nth-child(odd){
+    background-color: #fff;
+}
+
 #userMeds tr:hover{
     background-color: #ddd;
 }
 
-.add-button {
+/*Button Styling*/
+.buttons {
+    display: inline-block;
+    padding: 11px 22px;
+    margin: 0 5px 5px 0;
+    border-radius: 2.5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #4CBB17;
+    box-shadow: inset 0 -9.5px 0 -5.5px rgba(0,0,0,0.17);
     text-align: center;
-    padding-top: 20px;
+    position: relative;
+    margin-left: 650px;
+    margin-top: 30px;
 }
+
+a.buttons:active{
+    top: 1.5px;
+}
+
+@media all and (max-width:480px){
+    a.buttons{
+        display: block;
+        margin: 6.5px auto;
+    }
+}
+
+.profile-buttons{
+    display: inline-block;
+    padding: 11px 22px;
+    margin: 0 5px 5px 0;
+    border-radius: 2.5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #4CBB17;
+    box-shadow: inset 0 -9.5px 0 -5.5px rgba(0,0,0,0.17);
+    text-align: center;
+    position: relative;
+}
+
+a.profile-buttons:active{
+    top: 1.5px;
+}
+
+@media all and (max-width:480px){
+    a.profile-buttons{
+        display: block;
+        margin: 6.5px auto;
+    }
+}
+
