@@ -88,6 +88,7 @@ label{
     font-size: larger;
     margin-left: 20px;
     margin-right: 5px;
+
 }
 
 input{
@@ -182,23 +183,52 @@ input{
 }
 
 /* Medicine Table - Home Page */
+
 #userMeds{
     border-collapse: collapse;
     width: 90%;
-    margin-left: auto;
-    margin-right:  auto;
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#userMeds * {
+    position: relative;
 }
 
 #userMeds table,#userMeds th, #userMeds td {
-    border: 1px solid black;
+    border: 1px solid #022F48;
     text-align: center;
     padding: 8px;
 }
 
+#userMeds th, #userMeds td {
+    padding-left: 8px;
+}
+
+
+#userMeds tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+}
+
 #userMeds th {
+    height: 60 px;
     font-size: 20px;
     background-color: #f5a40e;
     color: white;
+    border-width: medium;
+}
+
+#userMeds td {
+    border-width: medium;
 }
 
 #userMeds tr:nth-child(even){
@@ -214,9 +244,10 @@ input{
 
 /*Button Styling*/
 .buttons {
-    display: inline-block;
+    display: block;
     padding: 11px 22px;
-    margin: 0 5px 5px 0;
+    width: 15%;
+    
     border-radius: 2.5px;
     box-sizing: border-box;
     text-decoration: none;
@@ -228,8 +259,7 @@ input{
     box-shadow: inset 0 -9.5px 0 -5.5px rgba(0,0,0,0.17);
     text-align: center;
     position: relative;
-    margin-left: 650px;
-    margin-top: 30px;
+    margin: 0 auto;
 }
 
 a.buttons:active{
@@ -245,6 +275,7 @@ a.buttons:active{
 
 .profile-buttons{
     display: inline-block;
+    width: 10%;
     padding: 11px 22px;
     margin: 0 5px 5px 0;
     border-radius: 2.5px;
