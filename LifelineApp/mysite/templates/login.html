@@ -162,18 +162,19 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/loggedin.html" method="post">
+  <form class="modal-content animate" action="/loggedin/" method="post">
+    {% csrf_token %}
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="{% static 'assets/baseavatar.jpg' %}" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
-      <label for="uname"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email Address" name="uname" required>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email Address" name="email" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="passwprd"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
         
       <button type="submit">Login</button>
       <label>
