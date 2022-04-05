@@ -27,8 +27,9 @@ urlpatterns = [
     path("login/", LogInPageView.as_view(), name="login"),
     path("profile/", ProfilePageView.as_view(), name="profile"),
     path("add/", AddPageView.as_view(), name="add"),
-    path("", HomePageView.as_view(), name="home"),
-
+    #path("", HomePageView.as_view(), name="home"),
     #path("", views.index, name ="homepage"),
-   # path("", views.add, name ="add"),
+
+    path("", views.index, name ="homepage"),
+    #path("/add.html", views.add, name ="add"),
 ]
