@@ -12,14 +12,14 @@
 <body>
 <header>
     <div class="container">
-        <a href = "add.html">
+        <a href = "/">
             <img src="{% static 'assets/logo.png' %}" alt="logo" class="logo"> 
         </a>
         <nav>
             <ul>
-                <li><a href="index.html"><i class="fa fa-fw fa-home"></i>Home</a></li>
-                <li><a href="add.html"><i class="fa fa-fw fa-plus-circle"></i>Add</a></li>
-                <li><a href="profile.html"><i class="fa fa-fw fa-user"></i>Profile</a></li>
+                <li><a href="/"><i class="fa fa-fw fa-home"></i>Home</a></li>
+                <li><a href=""><i class="fa fa-fw fa-plus-circle"></i>Add</a></li>
+                <li><a href="/profile"><i class="fa fa-fw fa-user"></i>Profile</a></li>
             </ul>
         </nav>
     </div>
@@ -28,7 +28,7 @@
 
 <div class="wrapper">
         <div class="search-input">
-            <a href="" target="_blank" hidden></a>
+            <a href="/" target="_blank" hidden></a>
             <input type="text" placeholder="Type to search...">
             <div class="autocom-box">
                 <!-- sample med list inserted from JS -->
@@ -41,7 +41,7 @@
     <script src="{% static 'js/sample_meds.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
 
-    <a href="" class="buttons">Add +</a>
+    <a href="/" class="buttons">Add +</a>
 
 </body>
 </html>
