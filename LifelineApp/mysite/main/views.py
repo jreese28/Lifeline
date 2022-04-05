@@ -72,7 +72,7 @@ def postSignIn(request):
   except:
     message="invalid credentials"
     return render(request, "login.html",{"messg":message})
-  print(user)
+  #print(user)
   return render(request, "loggedin.html",{"e":email})
 
 '''
