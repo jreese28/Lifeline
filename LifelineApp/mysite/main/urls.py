@@ -15,15 +15,15 @@ Including another URLconf
 """
 #from django.contrib import admin
 from . import views
-from django.urls import path
+from django.urls import path, re_path
 from .views import HomePageView, AddPageView, ProfilePageView, LogInPageView, LoggedInPageView
-
-
+from main.views import postSignIn
 
 app_name = "main"
 
 urlpatterns = [
-    path("loggedin/", LoggedInPageView.as_view(), name="loggedin"),
+    #path("loggedin/", LoggedInPageView.as_view(), name="loggedin"),
+    re_path(r'^loggedin/$',postSignIn, name="loggedin"),
     path("login/", LogInPageView.as_view(), name="login"),
     path("profile/", ProfilePageView.as_view(), name="profile"),
     path("add/", AddPageView.as_view(), name="add"),
