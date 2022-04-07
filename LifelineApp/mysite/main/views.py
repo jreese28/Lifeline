@@ -60,11 +60,13 @@ class LogInPageView(TemplateView):
 class LoggedInPageView(TemplateView):
   template_name = "loggedin.html"
 
+
 def signIn(request):
   return render(request, 'login.html')
 
 
 def postSignIn(request):
+  print("Post Sign In")
   email=request.POST.get('email')
   passw=request.POST.get('password')
   try:
