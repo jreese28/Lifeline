@@ -1,6 +1,6 @@
 // getting all required elements
 const searchWrapper = document.querySelector(".search-input");
-const inputBox = searchWrapper.querySelector("input");
+const inputBox = document.getElementById("search-input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
@@ -37,6 +37,7 @@ inputBox.onkeyup = (e)=>{
 function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
+    console.log(inputBox.value)
     icon.onclick = ()=>{
         webLink = `https://www.google.com/search?q=${selectData}`;
         linkTag.setAttribute("href", webLink);
