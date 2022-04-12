@@ -16,9 +16,9 @@
         </a>
         <nav>
             <ul>
-                <li><a href=""><i class="fa fa-fw fa-home"></i>Home</a></li>
-                <li><a href="add"><i class="fa fa-fw fa-plus-circle"></i>Add</a></li>
-                <li><a href="profile"><i class="fa fa-fw fa-user"></i>Profile</a></li>
+                <li><a href="/home"><i class="fa fa-fw fa-home"></i>Home</a></li>
+                <li><a href="/add"><i class="fa fa-fw fa-plus-circle"></i>Add</a></li>
+                <li><a href="/profile"><i class="fa fa-fw fa-user"></i>Profile</a></li>
             </ul>
         </nav>
     </div>
@@ -33,53 +33,21 @@
         </tr>
     </thead>
     <tbody>
-           <tr>
-        <td>{{medicine}}</td>
-        <td>{{directions}}</td>
-        <td>{{schedule}}</td>
+        {% for med in medicine %}
+        <tr>
+        <td>{{med.name}}</td>
+        <td>{{med.directions}}</td>
+        <td>{{med.schedule}}</td>
     </tr>
-    <tr>
-        <td> Medicine Example </td>
-        <td> Directions Example </td>
-        <td> Schedule Example </td>
-    </tr>
-    <tr>
-        <td> Medicine Example </td>
-        <td> Directions Example </td>
-        <td> Schedule Example </td>
-    </tr>
-    <tr>
-        <td> Medicine Example </td>
-        <td> Directions Example </td>
-        <td> Schedule Example </td>
-    </tr>
-    <tr>
-        <td> Medicine Example </td>
-        <td> Directions Example </td>
-        <td> Schedule Example </td>
-    </tr>
-    <tr>
-        <td> Medicine Example </td>
-        <td> Directions Example </td>
-        <td> Schedule Example </td>
-    </tr>
-    <tr>
-        <td> Medicine Example </td>
-        <td> Directions Example </td>
-        <td> Schedule Example </td>
-    </tr>
-    <tr>
-        <td> Medicine Example </td>
-        <td> Directions Example </td>
-        <td> Schedule Example </td>
-    </tr>
+    {% endfor %}
     </tbody>
 </table>
 
 <!--form class="add-button" action="add.html" method="post">
     <button type="submit">Add Medicine</button>
 </form-->
-<a href="add" class="buttons">Add Medicine</a>
+<a href="/add" class="buttons">Add Medicine</a>
 
+<!--a href="/login" class="profile-buttons">Logout</a-->
 </body>
 </html>
