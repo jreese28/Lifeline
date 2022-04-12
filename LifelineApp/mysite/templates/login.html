@@ -1,7 +1,15 @@
 
 
+{% if messg %}
+<script>
+    alert('{{ messg }}');
+</script>
+{% endif %}
+
 <!DOCTYPE html>
 {% load static %}
+{% load admin_urls %}
+
 <html>
 <head>
 <title> Lifeline: Log In</title>
@@ -17,9 +25,15 @@ body {
 
 /*positions sign-in text*/
 h2 {
-  position: fixed;
+  position: relative;
   left: 650px;
   top: 200px;
+}
+
+h3 {
+  position: relative;
+  left: 650px;
+  top: 250px;
 }
 
 /* Full-width input fields */
@@ -153,19 +167,16 @@ span.psw {
 </head>
 <body>
 
-<h2>Sign Up/In</h2>
+<h2>Log In / Sign Up</h2>
 
+<button onclick="document.getElementById('login').style.display='block'" class="loginbtn"style="width:auto;">Login</button>
 
-
-
-<button onclick="document.getElementById('id01').style.display='block'" class="loginbtn"style="width:auto;">Login</button>
-
-<div id="id01" class="modal">
+<div id="login" class="modal">
   
-  <form class="modal-content animate" action="/loggedin/" method="post">
+  <form class="modal-content animate" action="/postSignIn/" method="post">
     {% csrf_token %}
     <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="{% static 'assets/baseavatar.jpg' %}" alt="Avatar" class="avatar">
     </div>
 
@@ -176,23 +187,56 @@ span.psw {
       <label for="passwprd"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="password" required>
         
-      <button type="submit">Login</button>
+      <button type="submit" >Login</button>     
+       <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
+      <!--span class="psw">Forgot <a href="#">password?</a></span-->
+    </div>
+  </form>
+</div>
+
+<button onclick="document.getElementById('signup').style.display='block'" class="signupbtn"style="width:auto;">Sign Up</button>
+
+<div id="signup" class="modal">
+  
+  <form class="modal-content animate" action="/postSignUp/" method="post">
+    {% csrf_token %}
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="{% static 'assets/baseavatar.jpg' %}" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="newemail"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email Address" name="newemail" required>
+
+      <label for="newpassword"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="newpassword" required>
+        
+      <button type="submit">Sign Up</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn">Cancel</button>
+      <!--span class="psw">Forgot <a href="#">password?</a></span-->
     </div>
   </form>
 </div>
 
+
+
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
-
+var modal = document.getElementById('login');
+var modal = document.getElementById('signup');
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
