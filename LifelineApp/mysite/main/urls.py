@@ -16,20 +16,22 @@ Including another URLconf
 #from django.contrib import admin
 from . import views
 from django.urls import path, re_path
-from .views import HomePageView, AddPageView, ProfilePageView, LogInPageView, LoggedInPageView
-from main.views import postSignIn
+from .views import HomePageView, AddPageView, ProfilePageView, LogInPageView, LoggedInPageView, DescriptionPageView
+from main.views import postSignIn, postSignUp, logOut
 
 app_name = "main"
 
 urlpatterns = [
-    #path("loggedin/", LoggedInPageView.as_view(), name="loggedin"),
-    re_path(r'^loggedin/$',postSignIn, name="loggedin"),
-    path("login/", LogInPageView.as_view(), name="login"),
-    path("profile/", ProfilePageView.as_view(), name="profile"),
-    path("add/", AddPageView.as_view(), name="add"),
-    #path("", HomePageView.as_view(), name="home"),
-    #path("", views.index, name ="homepage"),
 
-    path("", views.index, name ="homepage"),
-    #path("/add.html", views.add, name ="add"),
+    path("description/", DescriptionPageView.as_view(), name="description"),
+    path("profile/", views.profile, name="profile"),
+    path("add/", views.add, name="add"),
+    path("", views.signIn, name="login"),
+    path('postSignIn/', views.postSignIn),
+    path('home/', views.index, name="home"),
+    #path('logOut/', logOut, name="logout"),
+    path('postSignUp/', views.postSignUp),
+    path('register/', views.register, name="register"),
+    path('logOut/', views.logOut, name='logOut'),
+    
 ]
