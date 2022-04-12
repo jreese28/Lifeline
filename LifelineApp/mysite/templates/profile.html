@@ -11,7 +11,7 @@
 <body>
 <header>
     <div class="container">
-        <a href = "">
+        <a href = "/">
             <img src="{% static 'assets/logo.png' %}" alt="logo" class="logo"> 
         </a>
         <nav>
@@ -24,20 +24,32 @@
     </div>
 </header>
 <h2>Profile</h2>
-
-<label for="fullname">Name:</label>
-<input style="width: 300px;" type="text" id="fullname" name="fullname" placeholder="Enter full name">
+<form action="/register/" method="post">
+    {% csrf_token %}
+{% if user_info.name %}
+<label for="fullname">Name: {{ user_info.name }} </label>
+{% else %}
+<label for="fullname">Name: </label>
+<input style="width: 300px;" type="text" id="fullname" name="fullname" placeholder="Enter full name" required>
+{% endif %}
 <br>
 <br>
 
-
-<label for="email">Email address:</label>
-<input style="width: 300px;" type="email" id="email" name="email" placeholder="Enter email: johndoe@example.com">
+{% if user_info.email %}
+<label for="email">Email address: {{ user_info.email }} </label>
+{% else %}
+<label for="email">Email address: {{email}} </label>
+<!--input style="width: 300px;" type="email" id="email" name="email" placeholder="Enter email: johndoe@example.com"-->
+{% endif %}
 <br>
 <br>
 
-<label for="birthday">Birthday:</label>
-<input type="date" id="birthday" name="birthday"> 
+{% if user_info.birthday %}
+<label for="birthday">Birthday: {{ user_info.birthday }}</label>
+{% else %}
+<label for="birthday">Birthday: </label>
+<input type="date" id="birthday" name="birthday" > 
+{% endif %}
 <br>
 <br>
 
@@ -46,8 +58,12 @@
     <button type="submit">Logout</button>
 </form-->
 
-<a href="" class="profile-buttons">Submit</a>
-<a href="/login" class="profile-buttons">Logout</a>
+{% if user_info.birthday == null and user_info.name == null and user_info.email == null %}
+<button type="submit" href="/home" class="profile-buttons">Submit</button>
+{% endif %}
+<!--a type = "button" href="/" class="profile-buttons">Logout</a-->
+</form>
+<a type="button" href="/logOut"  class="profile-buttons">Logout</a>
 
 
 </body>
