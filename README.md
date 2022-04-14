@@ -12,7 +12,7 @@ Misc (everything else): Team Collaboration
 ## [Project Documentation](https://drive.google.com/drive/folders/1ZbLiPScK3ReWsl1CGRjcP-Iq8eLm9HL1)
 * [UI/UX Design](https://www.figma.com/file/SDANd5ddy1jzR42dDCZa8W/Lifeline?node-id=0%3A1)
 * [Product Specification](https://docs.google.com/document/d/1ZaqEpnKljL5Ca9Kp0x9iij6Wm4dadjyRaJ3JL3T_OSE/edit)
-* [Project Presentation](https://docs.google.com/presentation/d/1EpH9tSFwvKTQZCWtpnVSeFdHWsesMK-ctYeuvlFQu9c/edit)
+* [Project Presentation](https://docs.google.com/presentation/d/1TvWf1PetzEiqNXGF_uOc7lWw-wGutMRUGt54bkB329Q/edit#slide=id.p)
 
 ## *[In a few sentences, describe the main idea.]*
 Prescription Adherence can be done (via email, call or sms) and remind patients when and how to take the drugs prescribed to them whether it’s after meals or before going to bed etc. Lifeline aims to be a product that allows users to access their medications/prescriptions, to manage their medication list, and to receive reminders for when and how to take their medications/prescriptions.
