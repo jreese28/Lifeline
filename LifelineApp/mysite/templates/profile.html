@@ -11,20 +11,20 @@
 <body>
 <header>
     <div class="container">
-        <a href = "/">
+        <a href = "/home">
             <img src="{% static 'assets/logo.png' %}" alt="logo" class="logo"> 
         </a>
         <nav>
             <ul>
-                <li><a href="/"><i class="fa fa-fw fa-home"></i>Home</a></li>
-                <li><a href="/add"><i class="fa fa-fw fa-plus-circle"></i>Add</a></li>
+                <li><a href="/home"><i class="fa fa-fw fa-home"></i>Home</a></li>
+                <li><a href="/add"><i class="fa fa-fw fa-plus-circle"></i>Manage</a></li>
                 <li><a href=""><i class="fa fa-fw fa-user"></i>Profile</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <h2>Profile</h2>
-<form action="/register/" method="post">
+<form style="text-align:center" action="/register/" method="post">
     {% csrf_token %}
 {% if user_info.name %}
 <label for="fullname">Name: {{ user_info.name }} </label>
@@ -44,6 +44,15 @@
 <br>
 <br>
 
+{% if user_info.phone %}
+<label for="phone">Phone number: {{ user_info.phone }} </label>
+{% else %}
+<label for="phone">Phone number: </label>
+<input style="width: 300px;" type="text" id="phone" name="phone" placeholder="Enter phone number" required>
+{% endif %}
+<br>
+<br>
+
 {% if user_info.birthday %}
 <label for="birthday">Birthday: {{ user_info.birthday }}</label>
 {% else %}
@@ -59,12 +68,13 @@
 </form-->
 
 {% if user_info.birthday == null and user_info.name == null and user_info.email == null %}
-<button type="submit" href="/home" class="profile-buttons">Submit</button>
-{% endif %}
+<button style="text-align:center" type="submit" href="/home" class="profile-buttons">Submit</button>
+{% else %}
 <!--a type = "button" href="/" class="profile-buttons">Logout</a-->
 </form>
+<div style="text-align:center">
 <a type="button" href="/logOut"  class="profile-buttons">Logout</a>
-
-
+</div>
+{% endif %}
 </body>
 </html>
