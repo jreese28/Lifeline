@@ -13,6 +13,12 @@ h2 {
     padding-bottom: 20px;
     color: #fff;
 }
+h3 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+}
 .container {
     width: 80%;
     margin: 0 auto;
@@ -243,8 +249,8 @@ input{
 }
 
 /*Button Styling*/
-.buttons {
-    display: block;
+.add-button {
+    display: inline-block;
     padding: 11px 22px;
     width: 15%;
     
@@ -259,10 +265,33 @@ input{
     box-shadow: inset 0 -9.5px 0 -5.5px rgba(0,0,0,0.17);
     text-align: center;
     position: relative;
-    margin: 0 auto;
+    margin-left: 470px;
 }
 
-a.buttons:active{
+a.add-button:active{
+    top: 1.5px;
+}
+
+.delete-button {
+    display: inline-block;
+    padding: 11px 22px;
+    width: 15%;
+    
+    border-radius: 2.5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #4CBB17;
+    box-shadow: inset 0 -9.5px 0 -5.5px rgba(0,0,0,0.17);
+    text-align: center;
+    position: relative;
+    margin: 80px;
+}
+
+a.delete-button:active{
     top: 1.5px;
 }
 
@@ -301,3 +330,4 @@ a.profile-buttons:active{
         margin: 6.5px auto;
     }
 }
+
