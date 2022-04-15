@@ -33,6 +33,7 @@ urlpatterns = [
     path('home/', views.index, name="home"),
     path('postSignUp/', views.postSignUp),
     path('register/', views.register, name="register"),
+    path('edit/', views.edit, name="edit"),
     path('logOut/', views.logOut, name='logOut'),
     
 ]
