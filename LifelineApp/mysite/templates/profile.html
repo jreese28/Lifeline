@@ -26,7 +26,16 @@
 <h2>Profile</h2>
 <form style="text-align:center" action="/register/" method="post">
     {% csrf_token %}
-{% if user_info.name %}
+
+
+{% if edit == 1%}
+<h3>All fields must be completed.</h3>
+<br>
+<br>
+{% endif %}
+
+
+{% if user_info.name and edit != 1 %}
 <label for="fullname">Name: {{ user_info.name }} </label>
 {% else %}
 <label for="fullname">Name: </label>
@@ -44,7 +53,7 @@
 <br>
 <br>
 
-{% if user_info.phone %}
+{% if user_info.phone and edit != 1%}
 <label for="phone">Phone number: {{ user_info.phone }} </label>
 {% else %}
 <label for="phone">Phone number: </label>
@@ -53,7 +62,7 @@
 <br>
 <br>
 
-{% if user_info.birthday %}
+{% if user_info.birthday and edit != 1%}
 <label for="birthday">Birthday: {{ user_info.birthday }}</label>
 {% else %}
 <label for="birthday">Birthday: </label>
@@ -67,13 +76,14 @@
     <button type="submit">Logout</button>
 </form-->
 
-{% if user_info.birthday == null and user_info.name == null and user_info.email == null %}
+{% if edit == 1 or user_info.birthday == null and user_info.name == null and user_info.email == null %}
 <button style="text-align:center" type="submit" href="/home" class="profile-buttons">Submit</button>
 {% else %}
 <!--a type = "button" href="/" class="profile-buttons">Logout</a-->
 </form>
 <div style="text-align:center">
 <a type="button" href="/logOut"  class="profile-buttons">Logout</a>
+<a type="button" href="/edit"  class="profile-buttons">Edit</a>
 </div>
 {% endif %}
 </body>
