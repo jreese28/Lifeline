@@ -6,6 +6,9 @@ from django.views.generic import TemplateView
 from django.contrib import auth
 from django.contrib.auth import logout
 import pyrebase
+import os
+from twilio.rest import Client
+#import logging
 from datetime import datetime
 
 firebaseConfig = {
@@ -23,6 +26,26 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 db = firebase.database()
 autho = firebase.auth()
 storage = firebase.storage()
+
+#SMS notifications from +16812562272
+
+
+'''
+account = "ACc7cb52a20a361f5890d8c11ca6756ade"
+token = "7b76fb804001c4c905f036b6fa940e9b"
+client = Client(account, token)
+
+#logging.basicConfig(filename='/log.txt')
+#client.http_client.logger.setLevel(logging.INFO)
+
+message = client.messages.create(
+  body = "Hi there",
+  from_ = "+16812562272",
+  to = "+14254040299",
+)
+print("Messages SID:")
+print(message.sid)
+'''
 
 
 ##### --------- VIEW PAGE FUNCTIONS ---------- ######
@@ -145,7 +168,31 @@ def register(request):
   db.child("people").child(request.session['uid']).update({'birthday':birthday})
   db.child("people").child(request.session['uid']).update({'phone':phone})
   #return render(request, 'home.html')
-  return add(request)
+  return index(request)
+
+def edit(request):
+  # prompts user to populate profile info and stores it in database
+  user_info = db.child("people").child(request.session['uid']).get()
+  user_info = user_info.val()
+  bday = user_info['birthday']
+  bday_dt = datetime.strptime(user_info['birthday'], '%Y-%m-%d')
+
+  bday_dt = bday_dt.strftime("%b %d %Y")
+  user_info['birthday'] = bday_dt
+
+  name=request.POST.get('fullname')
+  phone=request.POST.get('phone')
+  db.child("people").child(request.session['uid']).update({'name':name})
+  db.child("people").child(request.session['uid']).update({'phone':phone})
+  #return render(request, 'home.html')
+  edit = 1
+  context = {
+      "user_info":user_info,
+      "edit":edit,
+
+  }
+  return render(request, 'profile.html', context)
+
 
 def profile(request):
   user_info = db.child("people").child(request.session['uid']).get()
