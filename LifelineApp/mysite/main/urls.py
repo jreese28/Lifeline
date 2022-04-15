@@ -16,10 +16,11 @@ Including another URLconf
 #from django.contrib import admin
 from . import views
 from django.urls import path, re_path
-from .views import HomePageView, AddPageView, ProfilePageView, LogInPageView, LoggedInPageView, DescriptionPageView
+from .views import DescriptionPageView
 from main.views import postSignIn, postSignUp, logOut
 
 app_name = "main"
+
 
 urlpatterns = [
 
@@ -28,8 +29,8 @@ urlpatterns = [
     path("add/", views.add, name="add"),
     path("", views.signIn, name="login"),
     path('postSignIn/', views.postSignIn),
+    path('deleteMed/', views.deleteMed),
     path('home/', views.index, name="home"),
-    #path('logOut/', logOut, name="logout"),
     path('postSignUp/', views.postSignUp),
     path('register/', views.register, name="register"),
     path('logOut/', views.logOut, name='logOut'),
