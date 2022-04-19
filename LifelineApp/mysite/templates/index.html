@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Lifeline: Home</title>
+    <link rel="stylesheet" type="text/css" href="{%  static 'styles.css' %}" />
+    <link rel="stylesheet" href="{%  static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+    
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <a href = "/home">
+            <img src="{% static 'assets/logo.png' %}" alt="logo" class="logo"> 
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/home"><i class="fa fa-fw fa-home"></i>Home</a></li>
+                <li><a href="/add"><i class="fa fa-fw fa-plus-circle"></i>Manage</a></li>
+                <li><a href="/profile"><i class="fa fa-fw fa-user"></i>Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<h2>Home</h2>
+<table id="userMeds">
+    {% if medicine %}
+    <thead>
+        <tr>
+        <th> Medicine Name </th>
+        <th> Directions of Use </th>
+        <th> Medicine Schedule </th>
+        </tr>
+    </thead>
+    {% else %}
+
+    <h3 style="text-align:center; color: #fff;">Add your medicine to view it here!</h3>
+    {% endif %}
+    <tbody>
+        {% for med in medicine %}
+        <tr>
+        <td>{{med.name}}</td>
+        <td>{{med.directions}}</td>
+        <td>Every {{med.schedule}} Hours</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<!--form class="add-button" action="add.html" method="post">
+    <button type="submit">Add Medicine</button>
+</form-->
+<a href="/add" class="buttons">Manage Medicine</a>
+
+<!--a href="/login" class="profile-buttons">Logout</a-->
+</body>
+</html>

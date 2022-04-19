@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Lifeline: Profile</title>
+    <link rel="stylesheet" type="text/css" href="{%  static 'styles.css' %}" />
+    <link rel="stylesheet" href="{%  static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+    
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <a href = "/home">
+            <img src="{% static 'assets/logo.png' %}" alt="logo" class="logo"> 
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/home"><i class="fa fa-fw fa-home"></i>Home</a></li>
+                <li><a href="/add"><i class="fa fa-fw fa-plus-circle"></i>Manage</a></li>
+                <li><a href=""><i class="fa fa-fw fa-user"></i>Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<h2>Profile</h2>
+<form style="text-align:center" action="/register/" method="post">
+    {% csrf_token %}
+
+
+{% if edit == 1%}
+<h3>All fields must be completed.</h3>
+<br>
+<br>
+{% endif %}
+
+
+{% if user_info.name and edit != 1 %}
+<label for="fullname">Name: {{ user_info.name }} </label>
+{% else %}
+<label for="fullname">Name: </label>
+<input style="width: 300px;" type="text" id="fullname" name="fullname" placeholder="Enter full name" required>
+{% endif %}
+<br>
+<br>
+
+{% if user_info.email %}
+<label for="email">Email address: {{ user_info.email }} </label>
+{% else %}
+<label for="email">Email address: {{email}} </label>
+<!--input style="width: 300px;" type="email" id="email" name="email" placeholder="Enter email: johndoe@example.com"-->
+{% endif %}
+<br>
+<br>
+
+{% if user_info.phone and edit != 1%}
+<label for="phone">Phone number: {{ user_info.phone }} </label>
+{% else %}
+<label for="phone">Phone number: </label>
+<input style="width: 300px;" type="text" id="phone" name="phone" placeholder="Enter phone number" required>
+{% endif %}
+<br>
+<br>
+
+{% if user_info.birthday and edit != 1%}
+<label for="birthday">Birthday: {{ user_info.birthday }}</label>
+{% else %}
+<label for="birthday">Birthday: </label>
+<input type="date" id="birthday" name="birthday" > 
+{% endif %}
+<br>
+<br>
+
+<!--button type="submit">Save</button>
+<form class="modal-content animate" action="login.html" method="post">
+    <button type="submit">Logout</button>
+</form-->
+
+{% if edit == 1 or user_info.birthday == null and user_info.name == null and user_info.email == null %}
+<button style="text-align:center" type="submit" href="/home" class="profile-buttons">Submit</button>
+{% else %}
+<!--a type = "button" href="/" class="profile-buttons">Logout</a-->
+</form>
+<div style="text-align:center">
+<a type="button" href="/logOut"  class="profile-buttons">Logout</a>
+<a type="button" href="/edit"  class="profile-buttons">Edit</a>
+</div>
+{% endif %}
+</body>
+</html>

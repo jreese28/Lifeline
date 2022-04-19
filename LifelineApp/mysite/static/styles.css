@@ -1,0 +1,333 @@
+/*General Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: linear-gradient(to bottom,#4CBB17, white);
+    font-weight: 400;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h2 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+}
+h3 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: #fff;
+    opacity: 75%;
+}
+
+header::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    padding: 10px 0;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 100px;
+    padding-top: 23px;
+    
+    position: relative;
+}
+
+nav a {
+    color: #4CBB17;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #478778;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #478778;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    width: 100%
+
+} 
+
+/*Profile Page - Profile Form Styling*/
+
+label{
+    display: inline-block;
+    color: white;
+    font-size: larger;
+    margin-left: 20px;
+    margin-right: 5px;
+
+}
+
+input{
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+/*Search Bar - Add Meds Page */
+::selection{
+    color: #fff;
+    background: #e5e5e5;
+}
+
+.wrapper{
+    max-width: 450px;
+    margin: 150px auto;
+}
+
+.wrapper .search-input{
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input input{
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 60px 0 20px;
+    font-size: 18px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0.1);
+}
+
+.search-input.active input{
+    border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box{
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.search-input.active .autocom-box{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.autocom-box li{
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+}
+
+.search-input.active .autocom-box li{
+    display: block;
+}
+
+.autocom-box li:hover{
+    background: #efefef;
+}
+
+.search-input .icon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: #4CBB17;
+    cursor: pointer;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Medicine Table - Home Page */
+
+#userMeds{
+    border-collapse: collapse;
+    width: 90%;
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#userMeds * {
+    position: relative;
+}
+
+#userMeds table,#userMeds th, #userMeds td {
+    border: 1px solid #022F48;
+    text-align: center;
+    padding: 8px;
+}
+
+#userMeds th, #userMeds td {
+    padding-left: 8px;
+}
+
+
+#userMeds tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+}
+
+#userMeds th {
+    height: 60 px;
+    font-size: 20px;
+    background-color: #f5a40e;
+    color: white;
+    border-width: medium;
+}
+
+#userMeds td {
+    border-width: medium;
+}
+
+#userMeds tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#userMeds tr:nth-child(odd){
+    background-color: #fff;
+}
+
+#userMeds tr:hover{
+    background-color: #ddd;
+}
+
+/*Button Styling*/
+.add-button {
+    display: inline-block;
+    padding: 11px 22px;
+    width: 15%;
+    
+    border-radius: 2.5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #4CBB17;
+    box-shadow: inset 0 -9.5px 0 -5.5px rgba(0,0,0,0.17);
+    text-align: center;
+    position: relative;
+    margin-left: 470px;
+}
+
+a.add-button:active{
+    top: 1.5px;
+}
+
+.delete-button {
+    display: inline-block;
+    padding: 11px 22px;
+    width: 15%;
+    
+    border-radius: 2.5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #4CBB17;
+    box-shadow: inset 0 -9.5px 0 -5.5px rgba(0,0,0,0.17);
+    text-align: center;
+    position: relative;
+    margin: 80px;
+}
+
+a.delete-button:active{
+    top: 1.5px;
+}
+
+@media all and (max-width:480px){
+    a.buttons{
+        display: block;
+        margin: 6.5px auto;
+    }
+}
+
+.profile-buttons{
+    display: inline-block;
+    width: 10%;
+    padding: 11px 22px;
+    margin: 0 5px 5px 0;
+    border-radius: 2.5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #4CBB17;
+    box-shadow: inset 0 -9.5px 0 -5.5px rgba(0,0,0,0.17);
+    text-align: center;
+    position: relative;
+}
+
+a.profile-buttons:active{
+    top: 1.5px;
+}
+
+@media all and (max-width:480px){
+    a.profile-buttons{
+        display: block;
+        margin: 6.5px auto;
+    }
+}
+
