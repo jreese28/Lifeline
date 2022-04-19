@@ -30,4 +30,4 @@ Prescription Adherence can be done (via email, call or sms) and remind patients 
 - Patient users are able to view upcoming appointments, new notifications and other pertinent items on a single home screen
 
 ## *[In a few sentences, summarize any technical dependencies.]*
-We will be using HTML and CSS for the frontend. We will use NodeJS for our backend environment. Firebase will be used for data storage and management. Our code will be created in Visual Studio 2019, and source code will be managed through GitHub.
+We will be using HTML and CSS for the frontend. We will use Python's Django framework for our backend environment. Firebase will be used for data storage and management. Our code will be created in Visual Studio 2019, and source code will be managed through GitHub.
